@@ -17,13 +17,14 @@ Postacie z ich czarami, slotami i zasobami, dziennik, ustawienia i zaimportowane
 
 ## Drużyna online
 
-Ta część opisuje funkcję drużyny online w całości. Niektóre jej elementy (portrety w drużynie, wspólna kolejka inicjatywy, ukryte wpisy, kto jest przy stole) dojdą w kolejnych wersjach aplikacji; to, co tu napisane, dotyczy ich od dnia, w którym się pojawią.
+Ta część opisuje funkcję drużyny online w całości. Niektóre jej elementy (portrety w drużynie, wspólna kolejka inicjatywy, ukryte wpisy, kto jest przy stole, przyciski w Ustawieniach) dojdą w kolejnych wersjach aplikacji; to, co tu napisane, dotyczy ich od dnia, w którym się pojawią.
 
 ### Co przechowuje nasz serwer
 
 - **Klucz drużyny Twojego telefonu.** Gdy pierwszy raz zakładasz drużynę albo do niej dołączasz, serwer daje aplikacji losowy numer Twojego telefonu i losowy sekret. Sekret zostaje na telefonie. Serwer przechowuje tylko jego skrót (hash), z którego nie da się odtworzyć sekretu, oraz kiedy klucz powstał i kiedy był ostatnio użyty.
 - **Drużyny, w których jesteś.** Dla każdej drużyny: jej nazwa, którą wybiera gospodarz, i kto w niej jest: czy każdy członek jest gospodarzem, czy gościem, graczem, czy mistrzem gry, i kiedy dołączył.
 - **Twoje postacie w drużynie, tak jak widzą je inni:** imię każdej postaci i, jeśli go jej nadałeś, jej portret. Nic więcej z postaci: ani karta, ani punkty życia, ani czary, ani dziennik. Mistrz gry bez postaci jest widoczny jako „Mistrz gry”. Pozostali członkowie widzą Twoje postacie tylko z imienia i portretu, a Ty ich postacie tak samo.
+- **Portrety.** Jeśli postać w drużynie ma portret, aplikacja wysyła jego kopię na serwer, żeby telefony pozostałych członków mogły go pokazać. Serwer sprawdza tylko jego rozmiar i format. Usuwa portret kilka dni po tym, jak odejdziesz od stołu, a od razu, gdy wyjdziesz z drużyny albo usuniesz swoje dane drużyny.
 - **Zaproszenia.** Link, kod QR i krótki kod zaproszenia od gospodarza, przechowywane tylko jako skróty, z datą wygaśnięcia (po 7 dniach) i liczbą użyć.
 - **Gra drużyny przy stole:** wspólna kolejka inicjatywy z postaciami, przeciwnikami i innymi wpisami, ich rzuty, runda i czyja jest tura. Wpis, który mistrz gry ukryje, trafia tylko do mistrza gry (w drużynie bez mistrza gry tylko do tego, kto go dodał). Na telefony pozostałych graczy trafia dopiero wtedy, gdy zostanie odkryty.
 - **Tylko u gospodarza: licencja.** Prowadzenie drużyny online jest funkcją płatną, więc serwer pyta Google Play, czy zakup gospodarza jest ważny, i zapisuje odpowiedź: który produkt, odnośnik do zakupu, czy licencja jest dożywotnia, czy to subskrypcja, do kiedy jest ważna i kiedy ją sprawdzono. Goście niczego nie kupują i serwer niczego u nich nie sprawdza.
@@ -49,7 +50,7 @@ Przechowujemy te dane tylko po to, żeby działała drużyna online: żeby wpuś
 
 ### Gdzie
 
-Na naszych własnych serwerach w Polsce, w Unii Europejskiej. Fall In Studio prowadzi je samo; nikt inny nie przechowuje danych drużyny.
+Na naszych własnych serwerach w Polsce, w Unii Europejskiej. Fall In Studio prowadzi je samo; żadna inna firma nie przechowuje danych drużyny ani ich kopii.
 
 ### Kto jeszcze bierze w tym udział
 
@@ -61,8 +62,10 @@ Nie sprzedajemy danych i nie przekazujemy ich nikomu innemu.
 ### Jak długo
 
 - Drużyna, jej członkowie, ich postacie w niej, zaproszenia i gra: dopóki członek nie wyjdzie z drużyny (jego część jest usuwana od razu), gospodarz nie usunie członka albo gospodarz nie rozwiąże drużyny (wszystko jest usuwane od razu).
-- Gdy licencja gospodarza wygaśnie, drużyna przestaje działać po 7 dniach, ale zostaje zachowana, żeby mogła ruszyć znowu po odnowieniu licencji, dopóki gospodarz jej nie rozwiąże.
-- Klucz drużyny Twojego telefonu i zapis licencji gospodarza: dopóki nie poprosisz nas o ich usunięcie.
+- Portrety: kilka dni po tym, jak właściciel odejdzie od stołu; od razu, gdy wyjdzie z drużyny.
+- Gdy licencja gospodarza wygaśnie, drużyna przestaje działać po 7 dniach, ale zostaje zachowana, żeby mogła ruszyć znowu po odnowieniu licencji. Drużyna, która nie działa od 12 miesięcy, jest usuwana.
+- Klucz drużyny Twojego telefonu: usuwany, gdy nie był używany przez 12 miesięcy.
+- Wszystko, razem z zapisem licencji gospodarza: usuwane od razu, gdy usuniesz swoje dane drużyny (niżej).
 - Liczniki nieudanych prób dołączenia: jeden dzień. Dzienniki techniczne: 14 dni. Ślady techniczne: 72 godziny.
 
 ## Pliki, które sam przenosisz
@@ -80,9 +83,10 @@ Usuń postacie i paczki w aplikacji, wyczyść pamięć aplikacji w ustawieniach
 
 W drużynie online:
 
-- **Wyjdź z drużyny** w aplikacji: Ty i Twoje postacie w niej jesteście od razu usuwani z serwera.
-- **Rozwiąż drużynę** (gospodarz): drużyna, jej członkowie, zaproszenia i gra są od razu usuwane z serwera.
-- **Usuń telefon:** gdy wyczyścisz pamięć aplikacji albo ją odinstalujesz, klucza drużyny na serwerze nie da się już użyć. Żeby usunąć go także z serwera, razem ze wszystkim innym, co serwer o Tobie przechowuje, napisz do nas na adres niżej, a usuniemy go w ciągu miesiąca. Możemy zapytać o nazwę Twojej drużyny albo imiona Twoich postaci, żeby go znaleźć.
+- **Wyjdź z drużyny** w aplikacji albo **Wyjdź ze wszystkich drużyn** w Ustawieniach: Ty, Twoje postacie i ich portrety w tych drużynach są od razu usuwane z serwera.
+- **Rozwiąż drużynę** (gospodarz): drużyna, jej członkowie, zaproszenia, gra i portrety są od razu usuwane z serwera.
+- **Usuń moje dane drużyny** w Ustawieniach: od razu znika wszystko, co serwer o Tobie przechowuje: klucz drużyny Twojego telefonu, zapis licencji, Twoje miejsce w każdej drużynie, dodane przez Ciebie zaproszenia, wpisy i portrety. Drużyny, które prowadzisz, są przy tym rozwiązywane.
+- **Jeśli nie możesz już użyć aplikacji** (na przykład ją odinstalowałeś), klucza drużyny na serwerze nie da się już użyć, a po 12 miesiącach bez użycia jest usuwany. Żeby usunąć wszystko wcześniej, napisz do nas na adres niżej, a usuniemy to w ciągu miesiąca. Możemy zapytać o nazwę Twojej drużyny albo imiona Twoich postaci, żeby to znaleźć.
 
 Pisząc na ten sam adres, możesz też zapytać, co o Tobie przechowujemy, poprosić o poprawienie tych danych, ograniczenie lub zaprzestanie ich używania albo o ich kopię. Możesz też złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO).
 
@@ -95,5 +99,7 @@ Aplikacja nie jest skierowana do dzieci poniżej 13 lat.
 Jeśli aplikacja zacznie kiedyś inaczej obchodzić się z danymi, najpierw zmieni się ta polityka, z nową datą na górze.
 
 ## Kontakt
+
+Administratorem opisanych tu danych jest Fall In Studio ([pełna nazwa firmy z CEIDG]), Polska.
 
 Fall In Studio — spellhelper.fallin@gmail.com

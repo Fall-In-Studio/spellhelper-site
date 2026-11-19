@@ -17,13 +17,14 @@ Your characters, their spells, slots and resources, the journal, your settings a
 
 ## Online party
 
-This section describes the online party feature as a whole. Some parts of it (portraits in the party, the shared initiative order, hidden entries, who is at the table) arrive in later versions of the app; what is said here applies to them from the day they do.
+This section describes the online party feature as a whole. Some parts of it (portraits in the party, the shared initiative order, hidden entries, who is at the table, the buttons in Settings) arrive in later versions of the app; what is said here applies to them from the day they do.
 
 ### What our server keeps
 
 - **Your phone's party key.** The first time you create or join a party, the server gives the app a random number for your phone and a random secret. The secret stays on your phone. The server keeps only a scrambled form of it (a hash) that cannot be turned back into the secret, with when the key was made and last used.
 - **The parties you are in.** For each party: its name, chosen by the host, and who is in it: whether each member is the host or a guest, a player or the game master, and when they joined.
 - **Your characters in the party, as the others see them:** each character's name and, if you have given it one, its portrait. Nothing else from the character: not its sheet, hit points, spells or journal. A game master without a character is shown as "Game master". The other members see your characters only by name and portrait, and you see theirs the same way.
+- **Portraits.** If a character in the party has a portrait, the app sends a copy of it to the server, so that the other members' phones can show it. The server checks only its size and format. It deletes the portrait a few days after you leave the table, and at once when you leave the party or delete your party data.
 - **Invitations.** The host's invitation link, QR code and short code, kept only in a scrambled form, with when they expire (after 7 days) and how often they were used.
 - **The party's game at the table:** the shared initiative order with the characters, enemies and other entries in it, their rolls, the round and whose turn it is. An entry the game master hides is sent only to the game master (in a party without one, only to whoever added it). It reaches the other players' phones only when it is revealed.
 - **For the host only: the licence.** Hosting an online party is a paid feature, so the server asks Google Play whether the host's purchase is valid and keeps the answer: which product, a reference to the purchase, whether it is for life or a subscription, until when it is valid, and when it was checked. Guests buy nothing, and the server checks nothing about them.
@@ -49,7 +50,7 @@ We keep this data only to run the online party: to let your phone into your part
 
 ### Where
 
-On our own servers in Poland, in the European Union. Fall In Studio runs them itself; nobody else stores the party's data.
+On our own servers in Poland, in the European Union. Fall In Studio runs them itself; no other company stores the party's data or copies of it.
 
 ### Who else takes part
 
@@ -61,8 +62,10 @@ We do not sell the data or give it to anyone else.
 ### How long
 
 - A party, its members, their characters in it, its invitations and its game: until a member leaves (their part is deleted at once), the host removes a member, or the host dissolves the party (all of it is deleted at once).
-- When the host's licence ends, the party stops working 7 days later but is kept, so that it can start again when the licence is renewed, until the host dissolves it.
-- Your phone's party key and the host's licence record: until you ask us to delete them.
+- Portraits: a few days after their owner leaves the table; at once when the owner leaves the party.
+- When the host's licence ends, the party stops working 7 days later but is kept, so that it can start again when the licence is renewed. A party that has not worked for 12 months is deleted.
+- Your phone's party key: deleted when it has not been used for 12 months.
+- All of it, the host's licence record included: deleted at once when you delete your party data (see below).
 - Counts of failed tries to join: one day. Technical logs: 14 days. Technical traces: 72 hours.
 
 ## Files you choose to move
@@ -80,9 +83,10 @@ Delete characters and packs in the app, clear the app's storage in Android's set
 
 For the online party:
 
-- **Leave a party** in the app: you and your characters in it are deleted from the server at once.
-- **Dissolve a party** (the host): the party, its members, invitations and game are deleted from the server at once.
-- **Remove your phone:** once you clear the app's storage or uninstall it, the party key on the server can no longer be used. To have it deleted from the server too, with everything else the server keeps about you, write to us at the address below, and we delete it within a month. We may ask for the name of your party or of your characters, to find it.
+- **Leave a party** in the app, or **Leave all parties** in Settings: you, your characters and their portraits in those parties are deleted from the server at once.
+- **Dissolve a party** (the host): the party, its members, invitations, game and portraits are deleted from the server at once.
+- **Delete my party data** in Settings: everything the server keeps about you is deleted at once: your phone's party key, the licence record, your place in every party, the invitations, entries and portraits you added. Parties you host are dissolved with it.
+- **If you can no longer use the app** (for example you have uninstalled it), the party key on the server can no longer be used, and it is deleted after 12 months without use. To have everything deleted sooner, write to us at the address below, and we delete it within a month. We may ask for the name of your party or of your characters, to find it.
 
 You may also ask us what we keep about you, ask us to correct it, to limit or stop its use, or to give you a copy, by writing to the same address. You may also complain to the President of the Personal Data Protection Office (UODO) in Poland.
 
@@ -95,5 +99,7 @@ The app is not directed at children under 13.
 If the app ever starts handling data differently, this policy is updated first, with a new date at the top.
 
 ## Contact
+
+The controller of the data described here is Fall In Studio ([full business name as registered in CEIDG]), Poland.
 
 Fall In Studio — spellhelper.fallin@gmail.com
