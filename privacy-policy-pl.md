@@ -24,7 +24,7 @@ Ta część opisuje funkcję drużyny online w całości. Niektóre jej elementy
 - **Klucz drużyny Twojego telefonu.** Gdy pierwszy raz zakładasz drużynę albo do niej dołączasz, serwer daje aplikacji losowy numer Twojego telefonu i losowy sekret. Sekret zostaje na telefonie. Serwer przechowuje tylko jego skrót (hash), z którego nie da się odtworzyć sekretu, oraz kiedy klucz powstał i kiedy był ostatnio użyty.
 - **Drużyny, w których jesteś.** Dla każdej drużyny: jej nazwa, którą wybiera gospodarz, i kto w niej jest: czy każdy członek jest gospodarzem, czy gościem, graczem, czy mistrzem gry, i kiedy dołączył.
 - **Twoje postacie w drużynie, tak jak widzą je inni:** imię każdej postaci i, jeśli go jej nadałeś, jej portret. Nic więcej z postaci: ani karta, ani punkty życia, ani czary, ani dziennik. Mistrz gry bez postaci jest widoczny jako „Mistrz gry”. Pozostali członkowie widzą Twoje postacie tylko z imienia i portretu, a Ty ich postacie tak samo.
-- **Portrety.** Jeśli postać w drużynie ma portret, aplikacja wysyła jego kopię na serwer, żeby telefony pozostałych członków mogły go pokazać. Serwer sprawdza tylko jego rozmiar i format. Usuwa portret kilka dni po tym, jak odejdziesz od stołu, a od razu, gdy wyjdziesz z drużyny albo usuniesz swoje dane drużyny.
+- **Portrety.** Jeśli postać w drużynie ma portret, aplikacja wysyła jego kopię na serwer, żeby telefony pozostałych członków mogły go pokazać. Serwer sprawdza tylko jego rozmiar i format. Usuwa portret kilka dni po tym, jak odejdziesz od stołu, a od razu, gdy wyjdziesz z drużyny albo usuniesz swoje dane.
 - **Zaproszenia.** Link, kod QR i krótki kod zaproszenia od gospodarza, przechowywane tylko jako skróty, z datą wygaśnięcia (po 7 dniach) i liczbą użyć.
 - **Gra drużyny przy stole:** wspólna kolejka inicjatywy z postaciami, przeciwnikami i innymi wpisami, ich rzuty, runda i czyja jest tura. Wpis, który mistrz gry ukryje, trafia tylko do mistrza gry (w drużynie bez mistrza gry tylko do tego, kto go dodał). Na telefony pozostałych graczy trafia dopiero wtedy, gdy zostanie odkryty.
 - **Tylko u gospodarza: licencja.** Prowadzenie drużyny online jest funkcją płatną, więc serwer pyta Google Play, czy zakup gospodarza jest ważny, i zapisuje odpowiedź: który produkt, odnośnik do zakupu, czy licencja jest dożywotnia, czy to subskrypcja, do kiedy jest ważna i kiedy ją sprawdzono. Goście niczego nie kupują i serwer niczego u nich nie sprawdza.
@@ -65,7 +65,7 @@ Nie sprzedajemy danych i nie przekazujemy ich nikomu innemu.
 - Portrety: kilka dni po tym, jak właściciel odejdzie od stołu; od razu, gdy wyjdzie z drużyny.
 - Gdy licencja gospodarza wygaśnie, drużyna przestaje działać po 7 dniach, ale zostaje zachowana, żeby mogła ruszyć znowu po odnowieniu licencji. Drużyna, która nie działa od 12 miesięcy, jest usuwana.
 - Klucz drużyny Twojego telefonu: usuwany, gdy nie był używany przez 12 miesięcy.
-- Wszystko, razem z zapisem licencji gospodarza: usuwane od razu, gdy usuniesz swoje dane drużyny (niżej).
+- Wszystko, razem z zapisem licencji gospodarza: usuwane od razu, gdy usuniesz swoje dane (niżej).
 - Liczniki nieudanych prób dołączenia: jeden dzień. Dzienniki techniczne: 14 dni. Ślady techniczne: 72 godziny.
 
 ## Pliki, które sam przenosisz
@@ -83,9 +83,9 @@ Usuń postacie i paczki w aplikacji, wyczyść pamięć aplikacji w ustawieniach
 
 W drużynie online:
 
-- **Wyjdź z drużyny** w aplikacji albo **Wyjdź ze wszystkich drużyn** w Ustawieniach: Ty, Twoje postacie i ich portrety w tych drużynach są od razu usuwane z serwera.
+- **Wyjdź z drużyny** w aplikacji albo **Wyjdź ze wszystkich drużyn** w Ustawieniach: Ty, Twoje postacie i ich portrety w tych drużynach są od razu usuwane z serwera. Klucz drużyny Twojego telefonu i licencja zostają, więc możesz znowu dołączyć do drużyny albo ją założyć.
 - **Rozwiąż drużynę** (gospodarz): drużyna, jej członkowie, zaproszenia, gra i portrety są od razu usuwane z serwera.
-- **Usuń moje dane drużyny** w Ustawieniach: od razu znika wszystko, co serwer o Tobie przechowuje: klucz drużyny Twojego telefonu, zapis licencji, Twoje miejsce w każdej drużynie, dodane przez Ciebie zaproszenia, wpisy i portrety. Drużyny, które prowadzisz, są przy tym rozwiązywane.
+- **Usuń moje dane** w Ustawieniach: wszystkie Twoje dane online są od razu usuwane z serwera: klucz drużyny Twojego telefonu, zapis licencji, Twoje miejsce w każdej drużynie oraz dodane przez Ciebie zaproszenia, wpisy i portrety. Drużyny, które prowadzisz, są przy tym rozwiązywane.
 - **Jeśli nie możesz już użyć aplikacji** (na przykład ją odinstalowałeś), klucza drużyny na serwerze nie da się już użyć, a po 12 miesiącach bez użycia jest usuwany. Żeby usunąć wszystko wcześniej, napisz do nas na adres niżej, a usuniemy to w ciągu miesiąca. Możemy zapytać o nazwę Twojej drużyny albo imiona Twoich postaci, żeby to znaleźć.
 
 Pisząc na ten sam adres, możesz też zapytać, co o Tobie przechowujemy, poprosić o poprawienie tych danych, ograniczenie lub zaprzestanie ich używania albo o ich kopię. Możesz też złożyć skargę do Prezesa Urzędu Ochrony Danych Osobowych (UODO).
@@ -100,6 +100,6 @@ Jeśli aplikacja zacznie kiedyś inaczej obchodzić się z danymi, najpierw zmie
 
 ## Kontakt
 
-Administratorem opisanych tu danych jest Fall In Studio ([pełna nazwa firmy z CEIDG]), Polska.
+Administratorem opisanych tu danych jest Fall In Studio Jakub Leśniak, Polska.
 
 Fall In Studio — spellhelper.fallin@gmail.com
